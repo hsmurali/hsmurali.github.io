@@ -25,7 +25,7 @@ At LatchBio we build verifiable benchmarks that grade whether AI agents recover 
 <div class="benchmark-desc">24 long-horizon evaluations in which agents must derive biological claims from raw or near-raw spatial data without prescribed methods. Covers pancreatic cancer, glioblastoma organoids, lineage-traced lung adenocarcinoma, and mouse optic nerve aging systems.</div>
 </li>
 <li>
-<div class="benchmark-name"><a href="https://benchmarks.bio/sc" target="_blank">scBench</a></div>
+<div class="benchmark-name"><a href="https://benchmarks.bio/scbench" target="_blank">scBench</a></div>
 <div class="benchmark-desc">394 verifiable problems from practical scRNA-seq workflows across six sequencing platforms and seven task categories. Each problem tests whether an agent can extract biological insight from messy, real-world single-cell datasets with a deterministic grader.</div>
 </li>
 <li>
