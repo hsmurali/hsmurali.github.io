@@ -29,7 +29,7 @@ At LatchBio we build verifiable benchmarks that grade whether AI agents recover 
 <div class="benchmark-desc">394 verifiable problems from practical scRNA-seq workflows across six sequencing platforms and seven task categories. Each problem tests whether an agent can extract biological insight from messy, real-world single-cell datasets with a deterministic grader.</div>
 </li>
 <li>
-<div class="benchmark-name"><a href="https://benchmarks.bio/epi" target="_blank">EpiBench</a></div>
+<div class="benchmark-name"><a href="https://benchmarks.bio/epibench" target="_blank">EpiBench</a></div>
 <div class="benchmark-desc">106 short-horizon evaluations across CUT&Tag/CUT&RUN, ATAC-seq, ChIP-seq, and DNA methylation workflows. Tests whether agents make well-defined analysis decisions from realistic workflow states and return deterministically gradable answers.</div>
 </li>
 </ul>
