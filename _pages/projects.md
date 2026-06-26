@@ -6,7 +6,16 @@ description: ##
 nav: true
 ---
 
-# In this page I maintain a list of some projects that I have actively contributed to. 
+In this page I maintain a list of some projects that I have actively contributed to.
+{: .post-description}
+
+* * *
+
+## **gmacs**
+![image](../assets/img/gmacs-benchmark.png ){: style="float: right; padding-left:10px" ;height="120%" width="56%"}
+Peak calling is a core step in ATAC-seq and ChIP-seq analysis: after aligning reads, tools identify regions where chromatin accessibility or protein–DNA binding differs from a control. MACS3 is the standard peak caller, but its CPU implementation was not built for the data volumes produced by single-cell and spatial epigenomics assays, where peak calling can become a rate-limiting step that takes days on industry workloads.
+
+**gmacs** is our GPU-accelerated reimplementation of MACS3, written with [CuPy](https://cupy.dev/){:target="_blank"}. Instead of storing reads in coordinate tables and computing pileups in a separate pass, gmacs accumulates pileups directly into GPU arrays as data loads—cutting both load time and peak-calling runtime. On a ~1B-read scATAC-seq benchmark, gmacs runs roughly **15× faster** than MACS3 while maintaining 98–99% peak overlap (see figure). We walk through the algorithm and benchmarks in [our blogpost](https://blog.latch.bio/p/gpu-peak-calling-for-epigenetics){:target="_blank"}; source code is on [GitHub](https://github.com/latchbio-workflows/gmacs){:target="_blank"}.
 
 * * *
 

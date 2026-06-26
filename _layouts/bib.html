@@ -20,10 +20,20 @@
       <div class="author">
         {% for author in entry.author_array %}
           {% assign author_is_self = false %}
-          {% if author.last == site.scholar.last_name%}
-            {% if site.scholar.first_name contains author.first%}
+          {% if author.last == site.scholar.last_name %}
+            {% if site.scholar.first_name contains author.first %}
               {% assign author_is_self = true %}
             {% endif %}
+          {% endif %}
+          {% assign author_is_equal = false %}
+          {% if entry.equal_authors %}
+            {% assign equal_last_names = entry.equal_authors | split: "," %}
+            {% for equal_last in equal_last_names %}
+              {% assign equal_last_trimmed = equal_last | strip %}
+              {% if author.last == equal_last_trimmed %}
+                {% assign author_is_equal = true %}
+              {% endif %}
+            {% endfor %}
           {% endif %}
           {% assign coauthor_url = nil %}
           {% if site.data.coauthors[author.last] %}
@@ -34,32 +44,32 @@
               {% endif %}
             {% endfor %}
           {% endif %}
-          
+
           {% if forloop.length == 1 %}
             {% if author_is_self %}
-              <em>{{author.first}} {{author.last}}</em>
+              <em>{{author.first}} {{author.last}}</em>{% if author_is_equal %}<sup>*</sup>{% endif %}
             {% else %}
-              {{author.first}} {{author.last}}
+              {{author.first}} {{author.last}}{% if author_is_equal %}<sup>*</sup>{% endif %}
             {% endif %}
           {% else %}
             {% unless forloop.last %}
               {% if author_is_self %}
-                <em>{{author.first}} {{author.last}}</em>,
+                <em>{{author.first}} {{author.last}}</em>{% if author_is_equal %}<sup>*</sup>{% endif %},
               {% else %}
                 {% if coauthor_url %}
-                  <a href="{{coauthor_url}}" target="_blank">{{author.first}}, {{author.last}}</a>,
+                  <a href="{{coauthor_url}}" target="_blank">{{author.first}}, {{author.last}}</a>{% if author_is_equal %}<sup>*</sup>{% endif %},
                 {% else %}
-                  {{author.first}} {{author.last}},
+                  {{author.first}} {{author.last}}{% if author_is_equal %}<sup>*</sup>{% endif %},
                 {% endif %}
               {% endif %}
             {% else %}
               {% if author_is_self %}
-                and <em>{{author.first}} {{author.last}}</em>
+                and <em>{{author.first}} {{author.last}}</em>{% if author_is_equal %}<sup>*</sup>{% endif %}
               {% else %}
                 {% if coauthor_url %}
-                  and <a href="{{coauthor_url}}" target="_blank">{{author.first}}, {{author.last}}</a>
+                  and <a href="{{coauthor_url}}" target="_blank">{{author.first}}, {{author.last}}</a>{% if author_is_equal %}<sup>*</sup>{% endif %}
                 {% else %}
-                  and {{author.first}} {{author.last}}
+                  and {{author.first}} {{author.last}}{% if author_is_equal %}<sup>*</sup>{% endif %}
                 {% endif %}
               {% endif %}
             {% endunless %}
@@ -83,49 +93,9 @@
     {% if entry.abstract %}
       <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
     {% endif %}
-    {% if entry.arxiv %}
-      <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button" target="_blank">arXiv</a>
-    {% endif %}
-    {% if entry.html %}
-      <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button" target="_blank">HTML</a>
-    {% endif %}
-    {% if entry.pdf %}
-      {% if entry.pdf contains '://' %}
-      <a href="{{ entry.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
-      {% else %}
-      <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
-      {% endif %}
-    {% endif %}
-    {% if entry.supp %}
-      {% if entry.supp contains '://' %}
-      <a href="{{ entry.supp }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Supp</a>
-      {% else %}
-      <a href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Supp</a>
-      {% endif %}
-    {% endif %}
-    {% if entry.blog %}
-      <a href="{{ entry.blog }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Blog</a>
-    {% endif %}
     {% if entry.code %}
       <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Code</a>
     {% endif %}
-    {% if entry.poster %}
-      {% if entry.poster contains '://' %}
-      <a href="{{ entry.poster }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Poster</a>
-      {% else %}
-      <a href="{{ entry.poster | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Poster</a>
-      {% endif %}
-    {% endif %}
-    {% if entry.slides %}
-      {% if entry.slides contains '://' %}
-      <a href="{{ entry.slides }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Slides</a>
-      {% else %}
-      <a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Slides</a>
-      {% endif %}
-    {% endif %}
-    {% if entry.website %}
-      <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Website</a>
-    {% endif %} 
     </div>
 
     <!-- Hidden abstract block -->

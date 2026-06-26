@@ -331,8 +331,43 @@ footer.sticky-bottom {
     border-top: 1px solid $black-color;
     padding-top: 1rem;
     margin-top: 2rem;
-    margin-bottom: -2rem;
+    margin-bottom: 0;
     text-align: right;
+
+    .year-toggle {
+      color: var(--global-theme-color);
+      font-size: 1.5rem;
+      font-weight: inherit;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      text-decoration: none;
+      box-shadow: none;
+
+      &::after {
+        content: " \25BE";
+        font-size: 0.85em;
+      }
+
+      &.collapsed::after {
+        content: " \25B8";
+      }
+
+      &:hover,
+      &:focus {
+        color: var(--global-hover-color);
+        text-decoration: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .publication-year {
+    margin-bottom: 1rem;
+
+    .year-collapse {
+      padding-top: 0.5rem;
+    }
   }
   
   ol.bibliography {

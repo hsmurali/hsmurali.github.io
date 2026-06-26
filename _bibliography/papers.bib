@@ -1,5 +1,52 @@
 ---
 ---
+@article{epibench2026,
+  title = {EpiBench: Verifiable Evaluation of AI Agents on Epigenomics Analysis},
+  author = {Muralidharan, Harihara Subrahmaniam and Baskar, Reema and Lee, Soo Hee and Proctor, Tim and Workman, Kenny},
+  journal = {arXiv preprint},
+  year = {2026},
+  month = {06},
+  url = {https://arxiv.org/abs/2606.13602},
+  abstract = {We introduce EpiBench, a verifiable benchmark for short-horizon epigenomics analysis. EpiBench evaluates whether agents can make well-defined analysis decisions from realistic workflow states and return deterministically gradable answers. The benchmark includes 106 evaluations across CUT&Tag/CUT&RUN, ATAC-seq, ChIP-seq, and DNA methylation workflows. Across 5,088 valid trajectories from 16 model-harness pairs, no system passed a majority of attempts. Performance varies across assay types, and many failed runs still contain parts of the correct answer. Agents often found the right files and computed useful intermediate results, but failed when the task required deeper, assay-specific scientific judgment.},
+  code = {https://github.com/latchbio/epibench},
+}
+
+@article{spatialbench_long2026,
+  title = {Verifiable Benchmarking of Long-Horizon Spatial Biology},
+  author = {Diks, Ian and Muralidharan, Harihara Subrahmaniam and Proctor, Tim and Workman, Kenny},
+  journal = {arXiv preprint},
+  year = {2026},
+  month = {05},
+  url = {https://arxiv.org/abs/2605.28065},
+  equal_authors = {Diks, Muralidharan, Proctor, Workman},
+  abstract = {AI agents are increasingly useful for biological data analysis, but existing benchmarks mostly test broad biological knowledge, executable workflows, or localized analysis steps rather than end-to-end scientific reasoning over spatial measurements. We introduce SpatialBench-Long, a benchmark for long-horizon spatial biology in which agents must recover biological claims from raw or near-raw data and calibrated experimental context without prescribed methods. SpatialBench-Long contains 24 evaluations across primary pancreatic ductal adenocarcinoma, engineered glioblastoma organoids and in vivo tumors, Cas9 lineage-traced lung adenocarcinoma, and mouse optic nerve aging/intervention systems. Final answers are graded deterministically over controlled vocabularies and symbols with companion rubrics capturing progress through key analysis chokepoints. SpatialBench-Long tests whether agents can move beyond executing procedural analysis to deriving accurate scientific conclusions from complex spatial measurements.},
+  code = {https://github.com/latchbio/spatialbench},
+}
+
+@article{scbench2026,
+  title = {scBench: Evaluating AI Agents on Single-Cell RNA-seq Analysis},
+  author = {Workman, Kenny and Yang, Zhen and Muralidharan, Harihara Subrahmaniam and Abdulali, Aidan and Le, Hannah},
+  journal = {arXiv preprint},
+  year = {2026},
+  month = {02},
+  url = {https://arxiv.org/abs/2602.09063},
+  equal_authors = {Workman, Yang, Muralidharan, Le},
+  abstract = {As single-cell RNA sequencing datasets grow in adoption, scale, and complexity, data analysis remains a bottleneck for many research groups. Although frontier AI agents have improved dramatically at software engineering and general data analysis, it remains unclear whether they can extract biological insight from messy, real-world single-cell datasets. We introduce scBench, a benchmark of 394 verifiable problems derived from practical scRNA-seq workflows spanning six sequencing platforms and seven task categories. Each problem provides a snapshot of experimental data immediately prior to an analysis step and a deterministic grader that evaluates recovery of a key biological result. scBench complements SpatialBench to cover the two dominant single-cell modalities, serving both as a measurement tool and a diagnostic lens for developing agents that can analyze real scRNA-seq datasets faithfully and reproducibly.},
+  code = {https://github.com/latchbio/scbench},
+}
+
+@article{spatialbench2025,
+  title = {SpatialBench: Can Agents Analyze Real-World Spatial Biology Data?},
+  author = {Workman, Kenny and Yang, Zhen and Muralidharan, Harihara Subrahmaniam and Le, Hannah},
+  journal = {arXiv preprint},
+  year = {2025},
+  month = {12},
+  url = {https://arxiv.org/abs/2512.21907},
+  equal_authors = {Workman, Yang, Muralidharan, Le},
+  abstract = {Spatial transcriptomics assays are rapidly increasing in scale and complexity, making computational analysis a major bottleneck in biological discovery. Although frontier AI agents have improved dramatically at software engineering and general data analysis, it remains unclear whether they can extract biological insight from messy, real-world spatial datasets. We introduce SpatialBench, a benchmark of 146 verifiable problems derived from practical spatial analysis workflows spanning five spatial technologies and seven task categories. Each problem provides a snapshot of experimental data immediately prior to an analysis step and a deterministic grader that evaluates recovery of a key biological result. SpatialBench serves both as a measurement tool and a diagnostic lens for developing agents that can interact with real spatial datasets faithfully, transparently, and reproducibly.},
+  code = {https://github.com/latchbio/spatialbench},
+}
+
 @inproceedings{10.1145/3360322.3360850,
 author = {Nagarathinam, Srinarayana and Muralidharan, Harihara Subrahmaniam and Vasan, Arunchandar and Sarangan, Venkatesh and Narayana, Sermisha and Sivasubramaniam, Anand},
 title = {One for All, All for One: A Scalable Decision-Making Framework for Demand Response with a District Cooling Plant},
@@ -18,7 +65,7 @@ location = {New York, NY, USA},
 series = {BuildSys '19}
 }
 
-@@ARTICLE{10.3389/fmicb.2021.638561,
+@ARTICLE{10.3389/fmicb.2021.638561,
   
 AUTHOR={Muralidharan, Harihara Subrahmaniam and Shah, Nidhi and Meisel, Jacquelyn S. and Pop, Mihai},   
 TITLE={Binnacle: Using Scaffolds to Improve the Contiguity and Quality of Metagenomic Bins},      
@@ -28,7 +75,9 @@ PAGES={346},
 YEAR={2021},       
 URL={https://www.frontiersin.org/article/10.3389/fmicb.2021.638561},       
 DOI={10.3389/fmicb.2021.638561},      
-ISSN={1664-302X},   
+ISSN={1664-302X},
+equal_authors = {Muralidharan, Shah},
+code = {https://github.com/marbl/binnacle},
 ABSTRACT={High-throughput sequencing has revolutionized the field of microbiology, however, reconstructing complete genomes of organisms from whole metagenomic shotgun sequencing data remains a challenge. Recovered genomes are often highly fragmented, due to uneven abundances of organisms, repeats within and across genomes, sequencing errors, and strain-level variation. To address the fragmented nature of metagenomic assemblies, scientists rely on a process called binning, which clusters together contigs inferred to originate from the same organism. Existing binning algorithms use oligonucleotide frequencies and contig abundance (coverage) within and across samples to group together contigs from the same organism. However, these algorithms often miss short contigs and contigs from regions with unusual coverage or DNA composition characteristics, such as mobile elements. Here, we propose that information from assembly graphs can assist current strategies for metagenomic binning. We use MetaCarvel, a metagenomic scaffolding tool, to construct assembly graphs where contigs are nodes and edges are inferred based on paired-end reads. We developed a tool, Binnacle, that extracts information from the assembly graphs and clusters scaffolds into comprehensive bins. Binnacle also provides wrapper scripts to integrate with existing binning methods. The Binnacle pipeline can be found on GitHub (<ext-link ext-link-type="uri" xlink:href="https://github.com/marbl/binnacle" xmlns:xlink="http://www.w3.org/1999/xlink">https://github.com/marbl/binnacle</ext-link>). We show that binning graph-based scaffolds, rather than contigs, improves the contiguity and quality of the resulting bins, and captures a broader set of the genes of the organisms being reconstructed.}
 }
 
@@ -43,6 +92,8 @@ ISSN = {0305-1048},
 DOI = {10.1093/nar/gkad158},
 URL = {https://doi.org/10.1093/nar/gkad158},
 NOTE = {gkad158},
+equal_authors = {Luan, Muralidharan},
+code = {https://github.com/hsmurali/SCRAPT},
 EPRINT = {https://academic.oup.com/nar/advance-article-pdf/doi/10.1093/nar/gkad158/49515274/gkad158.pdf},
 }
 
@@ -53,8 +104,20 @@ JOURNAL = {Frontiers in Microbiology},
 YEAR = {2024},
 MONTH = {01},
 ABSTRACT = "{A common task in the analysis of microbial communities involves assigning taxonomic labels to the sequences derived from organisms found in the communities. Frequently, such labels are assigned using machine learning algorithms that are trained to recognize individual taxonomic groups based on training data sets that comprise sequences with known taxonomic labels. Ideally, the training data should rely on labels that are experimentally verified-formal taxonomic labels require knowledge of physical and biochemical properties of organisms that cannot be directly inferred from sequence alone. However, the labels associated with sequences in biological databases are most commonly computational predictions which themselves may rely on computationally-generated data-a process commonly referred to as "transitive annotation". In this manuscript we explore the implications of training a machine learning classifier (the Ribosomal Database Project's Bayesian classifier in our case) on data that itself has been computationally generated. We demonstrate that even a few computationally-generated training data points can significantly skew the output of the classifier to the point where entire regions of the taxonomic space can be disturbed. We also discuss key factors that affect the resilience of classifiers to transitively-annotated training data, and propose best practices to avoid the artifacts described in our paper.}",
-DOI = {110.3389/fmicb.2023.1240957},
+DOI = {10.3389/fmicb.2023.1240957},
 URL = {https://www.frontiersin.org/articles/10.3389/fmicb.2023.1240957/},
+code = {https://github.com/hsmurali/Transitive_Annotation},
+}
+
+@article{graphbased_variant2024,
+  title = {Graph-based variant discovery reveals novel dynamics in the human microbiome},
+  author = {Muralidharan, Harihara Subrahmaniam and Michaelis, Jacquelyn S and Ghurye, Jay and Treangen, Todd and Koren, Sergey and Fedarko, Marcus and Pop, Mihai},
+  journal = {arXiv preprint},
+  year = {2024},
+  month = {03},
+  url = {https://arxiv.org/abs/2403.01610},
+  abstract = {Sequence differences between the strains of bacteria comprising host-associated and environmental microbiota may play a role in community assembly and influence the resilience of microbial communities to disturbances. Tools for characterizing strain-level variation within microbial communities, however, are limited in scope, focusing on just single nucleotide polymorphisms, or relying on reference-based analyses that miss complex functional and structural variants. Here, we demonstrate the power of assembly graph analysis to detect and characterize structural variants in almost 1,000 metagenomes generated as part of the Human Microbiome Project. We identify over nine million variants comprising insertion/deletion events, repeat copy-number changes, and mobile elements such as plasmids. We highlight some of the potential functional roles of these genomic changes. Our analysis revealed striking differences in the rate of variation across body sites, highlighting niche-specific mechanisms of bacterial adaptation. The structural variants we detect also include potentially novel prophage integration events, highlighting the potential use of graph-based analyses for phage discovery.},
+  code = {https://github.com/marbl/MetaCarvel},
 }
 
 @article{Birzu_2023,
@@ -66,7 +129,8 @@ URL = {https://www.frontiersin.org/articles/10.3389/fmicb.2023.1240957/},
 	publisher = {{eLife} Sciences Publications, Ltd},
 	author = {Birzu, Gabriel and Muralidharan, Harihara Subrahmaniam and Goudeau, Danielle and Malmstrom, Rex R. and Fisher, Daniel S. and Bhaya, Devaki},
 	title = "{Hybridization breaks species barriers in long-term coevolution of a cyanobacterial population}",
-	abstract = "{Bacterial species often undergo rampant recombination yet maintain cohesive genomic identity. Ecological differences can generate recombination barriers between species and sustain genomic clusters in the short term. But can these forces prevent genomic mixing during long-term coevolution? Cyanobacteria in Yellowstone hot springs comprise several diverse species that have coevolved for hundreds of thousands of years, providing a rare natural experiment. By analyzing more than 300 single-cell genomes, we show that despite each species forming a distinct genomic cluster, much of the diversity within species is the result of hybridization driven by selection, which has mixed their ancestral genotypes. This widespread mixing is contrary to the prevailing view that ecological barriers can maintain cohesive bacterial species and highlights the importance of hybridization as a source of genomic diversity.}"
+	abstract = "{Bacterial species often undergo rampant recombination yet maintain cohesive genomic identity. Ecological differences can generate recombination barriers between species and sustain genomic clusters in the short term. But can these forces prevent genomic mixing during long-term coevolution? Cyanobacteria in Yellowstone hot springs comprise several diverse species that have coevolved for hundreds of thousands of years, providing a rare natural experiment. By analyzing more than 300 single-cell genomes, we show that despite each species forming a distinct genomic cluster, much of the diversity within species is the result of hybridization driven by selection, which has mixed their ancestral genotypes. This widespread mixing is contrary to the prevailing view that ecological barriers can maintain cohesive bacterial species and highlights the importance of hybridization as a source of genomic diversity.}",
+	code = {https://github.com/gbirzu/yellowstone_cyanobacteria_hybridization},
 }
 
 @article{10.1371/journal.pcbi.1012343,
@@ -80,7 +144,9 @@ URL = {https://www.frontiersin.org/articles/10.3389/fmicb.2023.1240957/},
     volume = {20},
     url = {https://doi.org/10.1371/journal.pcbi.1012343},
     pages = {1-12},
+    equal_authors = {Luan, Muralidharan},
     abstract = {For decades, the 16S rRNA gene has been used to taxonomically classify prokaryotic species and to taxonomically profile microbial communities. However, the 16S rRNA gene has been criticized for being too conserved to differentiate between distinct species. We argue that the inability to differentiate between species is not a unique feature of the 16S rRNA gene. Rather, we observe the gradual loss of species-level resolution for other nearly-universal prokaryotic marker genes as the number of gene sequences increases in reference databases. This trend was strongly correlated with how represented a taxonomic group was in the database and indicates that, at the gene-level, the boundaries between many species might be fuzzy. Through our study, we argue that any approach that relies on a single marker to distinguish bacterial taxa is fraught even if some markers appear to be discriminative in current databases.},
+    code = {https://github.com/tluan/ProkaryoticMarkerGenes-DatabaseSizeAnalysis},
     number = {8},
 
 }

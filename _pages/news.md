@@ -8,13 +8,13 @@ nav: true
 <div class="news">
     <div class="table-responsive">
       <table class="table table-sm table-borderless">
-        {% assign news = site.news | reverse %}
+        {% assign news = site.news | sort: 'date' | reverse %}
         {% for item in news %}
           <tr>
             <th scope="row">{{ item.date | date: "%b, %Y" }}</th>
             <td  style="height:40px;width:750px">
               {% if item.inline %}
-                {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+                {{ item.content | markdownify | replace: '<p>', '' | replace: '</p>', '' | emojify }}
               {% else %}
                 <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
               {% endif %}
