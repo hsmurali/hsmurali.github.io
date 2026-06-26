@@ -6,7 +6,7 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Harihara Subrahmaniam
 middle_name: 
 last_name: Muralidharan
-email: hsmurali@cs.umd.edu
+email: subrahmaniamharry94@gmail.com
 description: >
   Member of Technical Staff at LatchBio. GPU-accelerated bioinformatics and verifiable benchmarks for AI agents on biological data.
 footer_text: >
@@ -56,7 +56,7 @@ work_url: # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
 
-contact_note: The best way to reach me would be through email.
+contact_note: The best way to reach me would be through <a href="mailto:subrahmaniamharry94@gmail.com">email</a>.
 
 google_analytics: UA-193638557-1 # out your google-analytics code
 panelbear_analytics: XXXXXXXXX # panelbear analytics site ID

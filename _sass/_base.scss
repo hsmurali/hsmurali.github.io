@@ -277,6 +277,64 @@ footer.sticky-bottom {
 
 // Projects
 
+.project-link {
+  font-size: 0.75em;
+  margin-left: 0.45rem;
+  color: var(--global-text-color);
+  opacity: 0.65;
+  text-decoration: none;
+  vertical-align: middle;
+
+  &:hover {
+    color: var(--global-theme-color);
+    opacity: 1;
+    text-decoration: none;
+  }
+}
+
+.benchmark-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+
+  li {
+    margin: 0;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.12);
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  .benchmark-name {
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0 0 0.15rem;
+
+    a {
+      color: var(--global-theme-color);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .benchmark-desc {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    opacity: 0.85;
+    margin: 0;
+  }
+}
+
 .projects {
   .grid-item {
     width: 250px;
